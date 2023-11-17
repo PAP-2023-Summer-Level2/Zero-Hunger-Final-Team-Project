@@ -1,0 +1,121 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel ="stylesheet" href = "style.css">
+        <title>CFA Hunger Foundation</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="header">
+                <img id = "logo" src = "images/logo.png">
+                <h1 id = "title">CFA Hunger Foundation</h1>
+                <div class="header-right">
+                    <a target="_blank" href="https://www.wfp.org/ending-hunger">World Food Programme</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <h1>Our Vision<h1>
+           <div id = "quotes-box">
+                <div class = "quotes">
+                    <h2>Kinza</h2>
+                    <p>"Solving the issue of world hunger is important to me because it would enable every student to be the best version of themself in the classroom."</p>
+                </div>
+                
+                <div class = "quotes">
+                    <h2>Hiya</h2>
+                    <p>"Finding a solution to world hunger is important to me because no one should lack access to the basic nourishment essential for a healthy life."</p>
+                </div>
+                <div class = "quotes">
+                    <h2>Mozhgan</h2>
+                    <p>"Striving to find a solution for world hunger because everyone deserves to sleep with a belly full of nutritious food."</p>
+                </div>
+                
+                <div class = "quotes">
+                    <h2>Fatima</h2>
+                    <p>"It is important to me that we find a solution to world hunger so everyone can thrive rather than just survive in such a world." </p>
+                </div>
+            </div> 
+            <div id = "pic-box">
+                <img class = "quotes-pic" src="images/classroom.png">
+                <img class = "quotes-pic" src="images/rural.png">
+                <img class = "quotes-pic" src="images/child.png"> 
+                <img class = "quotes-pic" src="images/bamboo.jpg">  
+            </div>
+            
+            <div id = "research-box">
+                <div class = "research">
+                    <h2>
+                    Where Zero Hunger becomes relevant:
+                    </h2>
+                    <p>
+                        The countries with the most hunger are the Central African Republic, Madagascar, Yemen, and DR Congo. Even with countries around the globe being impacted by hunger, this issue is relevant when its impact can be seen in parts of every city.      
+                    </p>
+                </div>
+
+                <div class = "research">
+                    <h2>
+                        When Zero Hunger becomes relevant:
+                    </h2>
+                    <p>
+                        The goal is needed now, there are millions of people around the world that go to sleep hungry, people who are dying of malnutrition. The longer this issue goes unsolved, the more lives are at risk and the more people who are unable to live up to their full potential simply because of the lack of resources that they have.
+                    </p>
+                </div>
+
+                <div class = "research">
+                    <h2>
+                        How Zero Hunger becomes relevant:
+                    </h2>
+                    <p>
+                        For each country the reason for how they got on the list of World Hunger is different but the underlying answer is: corrupt government and/or climate change. 
+                    </p>
+                </div>
+            </div>
+
+            <div id="form">
+                <form class="container" onsubmit="return false"> 
+                    <label for="hours" id="theText">Select the amount of time you have to spend on our goal (Enter a whole number):</label><br><br>
+                    <input type="text" id="hours" name="time"><br><br>
+                    <input type="submit" class="button" value="Submit" id="button">
+                
+                </form>
+                
+                <p id="answer"></p>
+            </div>
+            <p></p>
+        </main>
+
+        <script>
+            let form = document.querySelector('#form');
+            let answer = document.querySelector('#answer');
+
+            function testResult (event) {
+                var inputValue = document.querySelector('#hours').value;
+                console.log(inputValue);
+                if (inputValue == 0) {
+                    answer.textContent = "Make a monthly donation/sponsor our organization!";
+                    answer.innerHTML+= "<br><a href='https://www.compassion.com/sponsor_a_child/?referer=639272&utm_source=google&utm_medium=cpc&utm_campaign=SEM_Google_NB_Sponsor_Sponsor-a-Child_Other_Desktop_CI&utm_content=140970645570&utm_term=monthly%20sponsorship&gad_source=1&gclid=Cj0KCQiAmNeqBhD4ARIsADsYfTfH-faQ5XZLxAFRkb835gN5lZ5ebzucFyKGfzKDvfu2Gh8WKNAnkLoaAoXmEALw_wcB'>Click Here for More Info!</a>"
+                } else if (inputValue > 0 && inputValue <= 15) {
+                    answer.textContent = "Volunteer at our organization at a location near you!";
+                    answer.innerHTML+= "<br><a href='https://www.sabic.com/en/collaboration/trend/food-and-water?gclid=Cj0KCQiAmNeqBhD4ARIsADsYfTdU-pvXFTqf0VDou5QHTXoInage4Y2IGbf7LdP8eKEtI9MIPQjVIkQaAggZEALw_wcB'>Click Here for More Info</a>"
+                } else if (inputValue > 15 && inputValue <= 31) {
+                    answer.textContent = "Make advertisements for our organization!";
+                } else {
+                    answer.textContent = "Fundraise for our organization and have your name be put on your website!";
+                }
+            }
+            form.addEventListener("submit", testResult);
+        </script>
+
+        <footer>
+            <div id = "footer">
+                <p>&copy;CFA Hunger Foundation 2023. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>
